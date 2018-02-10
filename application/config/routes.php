@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['posts'] = 'posts/index';
 // change default controller from welcome to Pages
 $route['default_controller'] = 'pages/view';
 // go to any page we want, if don't enter a page will go to home by default
