@@ -10,6 +10,7 @@
 			// if slug not passed
 			if ($slug === FALSE) {
 				// using Active Model in codeigniter
+				$this->db->order_by('id','DESC');
 				$query = $this->db->get('posts');
 				return $query->result_array();
 			}
