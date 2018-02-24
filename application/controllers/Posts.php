@@ -30,10 +30,22 @@ class Posts extends CI_Controller{
 	}
 	
 	public function create() {
-		
 		$data['title'] = 'Create Post';
-		$this->load->view('templates/header');
-		$this->load->view('posts/create', $data);
-		$this->load->view('templates/footer');
+		
+//		create rules for form validation
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('body', 'Body', 'required');
+		
+//		check if validation has ran - if form has been successfully submitted
+//		if yes, call a model function to INSERT
+//		if no just load the template views
+		if ($this->form_validation->run() === FALSE) {
+			$this->load->view('templates/header');
+			$this->load->view('posts/create', $data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->post_model->create_post();
+			$this->load->view('posts/success');
+		}
 	}
 }
