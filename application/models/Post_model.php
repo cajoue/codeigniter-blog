@@ -43,5 +43,10 @@
 //			do not know why this has been set as true but it has
 			return TRUE;
 		}
+		
+		public function update_post() {
+//			test that is is passed from view
+			echo $this->input->post('id'); die();
+		}
 	}
 	
