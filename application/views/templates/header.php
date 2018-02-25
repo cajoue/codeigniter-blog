@@ -15,10 +15,14 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
+				<div class="nav navbar-nav">
           <a class="nav-item nav-link" href="<?php echo base_url(); ?>">Home</a>
           <a class="nav-item nav-link" href="<?php echo base_url(); ?>about">About</a>
 					<a class="nav-item nav-link" href="<?php echo base_url(); ?>posts">Blog</a>      
+				</div>
+					<!--a little counterintuitive, but the following menu will align to the right-->
+				<div class="nav navbar-nav ml-auto">
+					<a class="nav-item nav-link" href="<?php echo base_url(); ?>posts/create">Create Post</a>
 				</div>
 			</div>
 		</div>
