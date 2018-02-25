@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 // go to any post we want
 $route['posts/create'] = 'posts/create';
+$route['posts/update'] = 'posts/update';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
 // change default controller from welcome to Pages
