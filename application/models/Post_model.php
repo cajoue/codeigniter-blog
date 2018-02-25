@@ -45,8 +45,19 @@
 		}
 		
 		public function update_post() {
-//			test that is is passed from view
-			echo $this->input->post('id'); die();
-		}
+//			get new data from form
+			$slug = url_title($this->input->post('title'));
+//			note can't edit slug directly, but can change title and edit slug based on that if needed
+			
+			$data = array(
+				'title' => $this->input->post('title'),
+				'slug' => $slug,
+				'body' => $this->input->post('body')
+			);
+			
+//			where record id matches input id, pass data array to db, UPDATE in table posts
+			$this->db->where('id', $this->input->post('id'));
+			return $this->db->update('posts', $data); 
+		}		
 	}
 	
