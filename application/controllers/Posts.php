@@ -75,6 +75,6 @@ class Posts extends CI_Controller{
 	}
 	
 	public function update() {
-		echo 'SUBMITTED';
+		$this->post_model->update_post();
 	}
 }
