@@ -34,5 +34,14 @@
 			return $this->db->insert('posts', $data); 
 			
 		}
+		
+		public function delete_post($id) {
+//			where db field mataches param
+			$this->db->where('id', $id);
+//			delte from this table
+			$this->db->delete('posts');
+//			do not know why this has been set as true but it has
+			return TRUE;
+		}
 	}
 	
