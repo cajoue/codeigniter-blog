@@ -48,4 +48,12 @@ class Posts extends CI_Controller{
 			redirect('posts');
 		}
 	}
+	
+	public function delete($id) {
+//		check $id is passed from view
+//		echo $id;	
+//		call the post model to delete the post
+		$this->post_model->delete_post($id);
+		
+	}		
 }
